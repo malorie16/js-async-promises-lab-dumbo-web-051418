@@ -21,21 +21,25 @@ function removeQuestion() {
   return new Promise(function() {
   let questionContainer = document.querySelector('.question-container')
   questionContainer.innerHTML = ''})
+  // toggleTrueAndFalseButtons()
 }
 
 function askQuestionThenRemoveQuestion(time) {
   return askQuestionThen(time).then(removeQuestion)
 }
 
+let counter = 0
+
 function trueAndFalseButtons () {
-   return container =
- document.querySelector('.true-false-list').querySelectorAll('.btn')
+   return document.querySelector('.true-false-list').querySelectorAll('.btn')
+ // console.log(btn);
 }
 
 function toggleTrueAndFalseButtons() {
-  console.log(trueAndFalseButtons())
   trueAndFalseButtons().forEach(function(btn) {
+    // console.log("pre-toggle", btn)
     btn.classList.toggle('hide')
+    // console.log("post-toggle", btn)
     }
   )
 }
@@ -45,5 +49,5 @@ function displayQuestionOnClick(){
   return btn.addEventListener('click', () => {
     toggleTrueAndFalseButtons()
     askQuestionThenRemoveQuestion(5000)
-  }) 
+  })
 }
